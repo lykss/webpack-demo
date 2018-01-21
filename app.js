@@ -1,3 +1,6 @@
-import sum from './sum'
+let func = () => {}
+const NUM = 45
+let arr = [1, 2, 4]
+let arrB = arr.map(item => item * 2)
 
-console.log('sum(23, 24) = ', sum(23, 24))
+console.log('new Set(arrB)', new Set(arrB))
