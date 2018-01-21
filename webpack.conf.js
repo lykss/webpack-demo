@@ -26,11 +26,10 @@ module.exports = {
     ]
   },
   plugins: [
-    // 抽离业务上的公共代码
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
+      async: 'async-common', // or true
       minChunks: 2,
-      chunks: ['pageA', 'pageB'] // 指定抽取公共代码的范围,避免报错 ERROR in CommonsChunkPlugin: While running in normal mode it's not allowed to use a non-entry chunk (vendor)
+      children: true
     }),
 
     // 把第三方代码进行抽离
