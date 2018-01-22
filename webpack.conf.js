@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
+var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -31,33 +32,44 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'less-loader'
-        }]
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: {
+            loader: 'style-loader'
+          },
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'less-loader'
+            }
+          ]
+        })
       }
     ]
   },
-  // plugins: [
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     async: 'async-common', // or true
-  //     minChunks: 2,
-  //     children: true
-  //   }),
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      async: 'async-common', // or true
+      minChunks: 2,
+      children: true
+    }),
 
-  //   // 把第三方代码进行抽离
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     name: 'vendor',
-  //     minChunks: Infinity
-  //   }),
+    // 把第三方代码进行抽离
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
 
-  //   // 把webpack进行抽离
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     name: 'manifest',
-  //     minChunks: Infinity
-  //   })
-  // ]
+    // 把webpack进行抽离
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      minChunks: Infinity
+    }),
+
+    // 抽取CSS
+    new ExtractTextWebpackPlugin({
+      filename: '[name].min.css'
+    })
+  ]
 }

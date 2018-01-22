@@ -37,3 +37,8 @@ ES2015 Loader Spec
 
 style-loader 创建style标签
 css-loader 引入css文件
+
+## 提取CSS
+
+extract-loader
+ExtractTextWebpackPlugin
