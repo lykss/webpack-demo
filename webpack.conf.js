@@ -28,6 +28,16 @@ module.exports = {
         }, {
           loader: 'css-loader'
         }] // 先由css-loader把css文件进行引入再由style-loader把css代码填充到html中，所以css-loader与style-loader之间的顺序需要注意
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'less-loader'
+        }]
       }
     ]
   },
