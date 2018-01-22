@@ -1,6 +1,8 @@
 var webpack = require('webpack')
 var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+var PurifyCSS = require('purifycss-webpack')
+var glob = require('glob-all')
 
 module.exports = {
   entry: {
@@ -82,6 +84,13 @@ module.exports = {
     // 抽取CSS
     new ExtractTextWebpackPlugin({
       filename: '[name].min.css'
+    }),
+
+    // PurifyCSS一定要放在ExtractTextWebpackPlugin后面
+    new PurifyCSS({
+      paths: glob.sync([
+        path.join(__dirname, './index.html')
+      ])
     })
   ]
 }

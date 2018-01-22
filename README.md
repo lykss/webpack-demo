@@ -66,3 +66,8 @@ Webpack.optimize.uglifyJS
 lodash
 lodash-es
 Babel-plugin-lodash
+
+## CSS Tree Shaking
+
+Purify CSS
+purifycss-webpack
