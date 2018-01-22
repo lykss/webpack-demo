@@ -41,6 +41,16 @@ module.exports = {
               loader: 'css-loader'
             },
             {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('autoprefixer')(),
+                  require('postcss-cssnext')()
+                ]
+              }
+            },
+            {
               loader: 'less-loader'
             }
           ]
