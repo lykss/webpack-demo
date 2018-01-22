@@ -52,3 +52,17 @@ CSS-next
 postcss-import
 postcss-url
 postcss-assets
+
+## JS Tree Shaking
+
+Webpack.optimize.uglifyJS
+要使得Tree Shaking生效的前提是：
+1.项目代码采用ES6的方式进行编写
+2.引用的第三方代码采用ES6的方式进行编写
+3.使用babel时设置modules为false<https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226843&idx=1&sn=8ce859bb0ccaa2351c5f8231cc016052&chksm=bd495b5f8a3ed249bb2d967e27f5e0ac20b42f42698fdfd0d671012782ce0074a21129e5f224&mpshare=1&scene=1&srcid=08241S5UYwTpLwk1N2s51tXG&key=adf9313632dd72f547280f783810492f9adb79ab0d4163835d8f16b9ef1ba0b666c3253ebf73fcbd10842f39091c3775a8bcb7ebf2f1613b0baadc517bd3a3f871c02aa3495fa42b3e960fd7f99357e0&ascene=0&uin=MTkwNTY4NjMxOQ%3D%3D&devicetype=iMac+MacBookAir7%2C2+OSX+OSX+10.12+build(16A323)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=Kwkar2P9YwiWaPYmrcaqYmEqAigrP8I305SDCp6p05cCbna5znl6Uz%2FMx75BskRL>
+
+## Lodash Tree Shaking
+
+lodash
+lodash-es
+Babel-plugin-lodash

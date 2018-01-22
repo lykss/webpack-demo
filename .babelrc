@@ -3,7 +3,8 @@
     ["babel-preset-env", {
       "targets": {
         "browsers": ["> 1%", "last 10 versions"]
-      }
+      },
+      "modules": false
     }]
   ],
   "plugins": [

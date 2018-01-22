@@ -59,6 +59,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+
     new webpack.optimize.CommonsChunkPlugin({
       async: 'async-common', // or true
       minChunks: 2,

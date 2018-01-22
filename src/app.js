@@ -1,2 +1,3 @@
-import './css/base.css'
-import './css/common.less'
+import {a} from './utils.js'
+
+console.log(a())
