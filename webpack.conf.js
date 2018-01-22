@@ -18,7 +18,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: /node_modules/
       },
       {
         test: /\.tsx?$/,
@@ -57,6 +57,28 @@ module.exports = {
             }
           ]
         })
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     useRelativePath: true,
+          //     outputPath: 'dist/',
+          //     publicPath: ''
+          //   }
+          // },
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              useRelativePath: true,
+              outputPath: 'dist/',
+              publicPath: ''
+            }
+          }
+        ]
       }
     ]
   },

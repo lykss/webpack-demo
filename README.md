@@ -71,3 +71,14 @@ Babel-plugin-lodash
 
 Purify CSS
 purifycss-webpack
+
+## 图片处理
+
+CSS中引入的图片
+自动合成雪碧图
+压缩图片
+Base64编码
+file-loader
+url-loader
+img-loader
+postcss-sprites
