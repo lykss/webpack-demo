@@ -87,3 +87,9 @@ postcss-sprites
 
 file-loader
 url-loader
+
+## 第三方JS库
+
+webpack.providePlugin
+imports-loader
+window
