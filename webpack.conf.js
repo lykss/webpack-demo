@@ -46,10 +46,12 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: [
-                  require('autoprefixer')(),
-                  require('postcss-cssnext')()
-                ]
+                plugins: function(loader) {
+                  return [
+                    require('postcss-sprites')(),
+                    require('postcss-cssnext')()
+                  ]
+                }
               }
             },
             {
@@ -77,7 +79,15 @@ module.exports = {
               outputPath: 'dist/',
               publicPath: ''
             }
-          }
+          },
+          {
+            loader: 'img-loader',
+            options: {
+              pngquant: {
+                quality: 80
+              }
+            }
+          },
         ]
       }
     ]
