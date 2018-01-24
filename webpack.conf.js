@@ -89,6 +89,21 @@ module.exports = {
             }
           },
         ]
+      },
+      {
+        test: /\.(eot|woff2?|ttf|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              publicPath: '',
+              outputPath: 'dist/',
+              useRelativePath: true,
+              name: '[name]-[hash:5].[ext]',
+              limit: 5000
+            }
+          }
+        ]
       }
     ]
   },

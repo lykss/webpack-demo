@@ -82,3 +82,8 @@ file-loader
 url-loader
 img-loader
 postcss-sprites
+
+## 字体文件
+
+file-loader
+url-loader
