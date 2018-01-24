@@ -3,6 +3,7 @@ var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var PurifyCSS = require('purifycss-webpack')
 var glob = require('glob-all')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -138,6 +139,11 @@ module.exports = {
       paths: glob.sync([
         path.join(__dirname, './index.html')
       ])
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './index.html'
     })
   ]
 }

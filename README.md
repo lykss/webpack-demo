@@ -93,3 +93,9 @@ url-loader
 webpack.providePlugin
 imports-loader
 window
+
+## HTML in Webpack
+
+自动生成HTML
+HtmlWebpackPlugin
+场景优化
