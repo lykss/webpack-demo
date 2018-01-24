@@ -4,6 +4,7 @@ var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var PurifyCSS = require('purifycss-webpack')
 var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 
 module.exports = {
   entry: {
@@ -147,6 +148,10 @@ module.exports = {
       paths: glob.sync([
         path.join(__dirname, './index.html')
       ])
+    }),
+
+    new HtmlInlineChunkPlugin({
+      inlineChunks: ['manifest']
     }),
 
     new HtmlWebpackPlugin({

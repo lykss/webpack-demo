@@ -106,4 +106,7 @@ html-loader
 <img src="${require('img-path')}"/>
 ```
 
-场景优化
+配合优化
+提前载入webpack加载代码
+inline-manifest-webpack-plugin
+(✔)html-webpack-inline-chunk-plugin
