@@ -110,3 +110,13 @@ html-loader
 提前载入webpack加载代码
 inline-manifest-webpack-plugin
 (✔)html-webpack-inline-chunk-plugin
+
+## 搭建开发环境
+
+webpack watch mode
+(1)webpack -watch
+(2)webpack -w
+
+webpack-dev-server
+
+express + webpack-dev-middleware

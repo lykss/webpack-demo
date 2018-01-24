@@ -1,10 +1,12 @@
-var webpack = require('webpack')
 var path = require('path')
+var glob = require('glob-all')
+
+var webpack = require('webpack')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var PurifyCSS = require('purifycss-webpack')
-var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -157,6 +159,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html'
-    })
+    }),
+
+    new CleanWebpackPlugin(['dist'])
   ]
 }
