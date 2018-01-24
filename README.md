@@ -98,4 +98,12 @@ window
 
 自动生成HTML
 HtmlWebpackPlugin
+
+HTML中引入图片
+html-loader
+
+``` html
+<img src="${require('img-path')}"/>
+```
+
 场景优化
