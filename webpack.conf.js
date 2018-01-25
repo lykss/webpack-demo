@@ -17,6 +17,10 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js'
   },
+  devServer: {
+    port: 9001,
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {

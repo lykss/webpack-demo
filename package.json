@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.conf.js -w --progress --display-reasons --color"
+    "build": "webpack --config webpack.conf.js -w --progress --display-reasons --color",
+    "server": "webpack-dev-server --open --config webpack.conf.js --progress --color"
   },
   "keywords": [
     "webpack"
@@ -45,7 +46,8 @@
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
