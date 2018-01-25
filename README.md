@@ -132,3 +132,22 @@ module.hot
 module.hot.accept
 
 express + webpack-dev-middleware
+
+Source Map调试
+Devtool
+  Development
+    eval
+    eval-source-map
+    cheap-eval-source-map
+    (✔)cheap-module-eval-source-map
+  Production
+    (✔)source-map
+    hidden-source-map
+    nosource-source-map
+webpack.SourceMapDevToolPlugin
+webpack.EvalSourceMapDevToolPlugin
+
+需要开启对应loader的sourcemap配置项
+css-loader.option.sourcemap
+less-loader.option.sourcemap
+sass-loader.option.sourcemap

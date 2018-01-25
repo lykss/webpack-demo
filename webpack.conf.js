@@ -17,6 +17,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js'
   },
+  devtool: 'eval',
   devServer: {
     port: 9001,
     historyApiFallback: true,
