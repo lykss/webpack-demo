@@ -121,4 +121,14 @@ webpack-dev-server
 Proxy
 代理远程接口请求 http-proxy-middleware devServer.proxy
 
+Module Hot Reloading
+保持应用的数据状态
+节省调试时间
+样式调试更快
+devServer.hot
+webpack.HotModuleReplacementPlugin
+webpack.NamedModulesPlugin
+module.hot
+module.hot.accept
+
 express + webpack-dev-middleware

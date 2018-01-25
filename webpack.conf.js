@@ -32,7 +32,9 @@ module.exports = {
           'Cookie': ''
         }
       }
-    }
+    },
+    hot: true,
+    hotOnly: true
   },
   module: {
     rules: [
@@ -178,6 +180,10 @@ module.exports = {
       template: './index.html'
     }),
 
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+
+    new webpack.HotModuleReplacementPlugin(),
+
+    new webpack.NamedModulesPlugin()
   ]
 }
