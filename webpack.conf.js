@@ -19,7 +19,20 @@ module.exports = {
   },
   devServer: {
     port: 9001,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'https://m.weibo.cn',
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/comments': '/api/comments'
+        },
+        headers: {
+          'Cookie': ''
+        }
+      }
+    }
   },
   module: {
     rules: [

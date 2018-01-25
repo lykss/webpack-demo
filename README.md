@@ -118,5 +118,7 @@ webpack watch mode
 (2)webpack -w
 
 webpack-dev-server
+Proxy
+代理远程接口请求 http-proxy-middleware devServer.proxy
 
 express + webpack-dev-middleware
