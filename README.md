@@ -151,3 +151,33 @@ webpack.EvalSourceMapDevToolPlugin
 css-loader.option.sourcemap
 less-loader.option.sourcemap
 sass-loader.option.sourcemap
+
+## ESlint检查代码格式
+
+eslint
+eslint-loader
+eslint-plugin-html
+eslint-friendly-formatter
+
+## 配置ESlint
+
+webpack config
+.eslintrc.*
+package.json中的eslintConfig
+
+## javascript standard style
+
+eslint-config-standard
+eslint-plugin-promise
+eslint-plugin-standard
+eslint-plugin-import
+eslint-plugin-node
+
+## 配置eslint
+
+eslint-loader
+  options.failOnWarning
+  options.failOnError
+  options.formatter
+  options.outputReport
+devServer.overlay

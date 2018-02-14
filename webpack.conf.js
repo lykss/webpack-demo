@@ -20,6 +20,7 @@ module.exports = {
   devtool: 'eval',
   devServer: {
     port: 9001,
+    overlay: true,
     historyApiFallback: true,
     proxy: {
       '/api': {
@@ -41,7 +42,19 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'src/libs')],
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              formatter: require('eslint-friendly-formatter')
+            }
+          }
+        ],
         exclude: /node_modules/
       },
       {
