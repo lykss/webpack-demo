@@ -260,3 +260,30 @@ webpack-bundle-analyzer
   cache-loader
   升级node
   升级webpack
+
+## 长缓存优化
+
+场景
+  改变app代码，vendor代码也改变
+解决
+  提取vendor
+  hash -> chunkhash
+  提取webpack runtime
+
+场景
+  引入新模块，模块顺序变化，vendor hash也变化
+解决
+  NamedChunksPlugin
+  NamedModulesPlugin
+
+场景
+  动态引入模块时，vendor hash也改变
+解决
+  定义动态模块的chunkname
+
+总结
+  独力打包vendor
+  抽离manifest(webpack runtime)
+  使用NamedChunksPlugin
+  使用NamedModulesPlugin
+  动态模块给定模块名称

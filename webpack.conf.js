@@ -153,6 +153,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.NamedChunksPlugin(),
+
+    new webpack.NamedModulesPlugin(),
+
     new webpack.DllReferencePlugin({
       manifest: require('./src/dll/ui-manifest.json')
     }),
