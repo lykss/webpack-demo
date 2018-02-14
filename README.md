@@ -213,3 +213,16 @@ webpack-hot-middleware
 http-proxy-middleware
 connect-history-api-fallback
 opn
+
+## 打包结果分析
+
+Offical Analyse Tool
+  webpack --profile --json > stats.json (Mac)
+  webpack --profile --json | Out-file 'stats.json' - Encoding OEM (windows)
+  进入http://webpack.github.io/analyse/ 上传刚刚生成的json文件
+
+webpack-bundle-analyzer
+  插件
+    BundleAnalyzerPlugin
+  命令行
+    webpack-bundle-analyzer stats.json
