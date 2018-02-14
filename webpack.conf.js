@@ -153,7 +153,23 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DllReferencePlugin({
+      manifest: require('./src/dll/ui-manifest.json')
+    }),
+
+    new webpack.DllReferencePlugin({
+      manifest: require('./src/dll/vue-manifest.json')
+    }),
+
+    new webpack.optimize.UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false
+        }
+      },
+      parallel: true,
+      cache: true
+    }),
 
     new webpack.optimize.CommonsChunkPlugin({
       async: 'async-common', // or true

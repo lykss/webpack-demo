@@ -226,3 +226,37 @@ webpack-bundle-analyzer
     BundleAnalyzerPlugin
   命令行
     webpack-bundle-analyzer stats.json
+
+## 优化打包速度
+
+文件数量
+依赖数量
+页面数量
+
+办法一
+  分开vendor和app
+  DllPlugin
+  DllReferencePlugin
+  打包第三方代码的配置文件 webpack.dll.conf.js
+
+办法二
+  UglifyJsPlugin
+    parallel
+    cache
+
+办法三
+  HappyPack
+  HappyPack.ThreadPool
+
+办法四
+  babel-loader
+    options.cacheDirectory
+    include
+    exclude
+
+其他
+  减少resolve
+  Devtool:去除sourceMap
+  cache-loader
+  升级node
+  升级webpack
