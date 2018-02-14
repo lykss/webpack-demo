@@ -287,3 +287,29 @@ webpack-bundle-analyzer
   使用NamedChunksPlugin
   使用NamedModulesPlugin
   动态模块给定模块名称
+
+## 多页面应用
+
+特点
+  多入口 entry
+  多页面 html
+  每个页面不同的chunk
+  每个页面不同的参数
+
+方案
+  多配置
+    webpack 3.1.0
+    parallel-webpack
+      parallel-webpack --watch
+      parallel-webpack --config
+    优点
+      可以使用parallel-webpack来提高打包速度
+      配置更加独力，灵活
+    缺点
+      不能多页面之间共享代码
+  单配置
+    优点
+      可以共享各个entry之间的公用代码
+    缺点
+      打包速度比较慢
+      输出的内容比较复杂
