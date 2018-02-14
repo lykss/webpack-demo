@@ -181,3 +181,27 @@ eslint-loader
   options.formatter
   options.outputReport
 devServer.overlay
+
+## 开发环境和生产环境
+
+开发环境
+  模块热更新
+  sourceMap
+  接口代理
+  代码规范检查
+
+生产环境
+  提取公用代码
+  压缩混淆
+  文件压缩/Base64编码
+  去除无用的代码
+
+共同点
+  同样的入口
+  同样的代码处理(loader处理)
+  同样的解析配置
+
+webpack-merge
+webpack.dev.conf.js
+webpack.prod.conf.js
+webpack.common.conf.js
