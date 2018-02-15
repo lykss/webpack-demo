@@ -332,3 +332,45 @@ Angular-cli
   环境设置
 
 npm install -g @angular/cli
+
+## webpack面试
+
+概念
+  Q:什么是webpack？webpack与grunt和gulp有什么不同？
+  A:webpack是一个模块打包工具，可以递归打包项目中的所有模块，最终生成几个打包后的文件。和其他工具最大的不同在于他支持code-splitting、模块化(AMD、ESM、CommonJS)、全局分析。
+  grunt和gulp是任务构建工具，根据一系列步骤执行任务。
+
+  Q:什么是bundle，什么是chunk，什么是module？
+  A:bundle是由webpack打包出来的文件。chunk是指webpack在进行模块依赖分析时，代码分割出来的代码块。module是开发中的单个模块。
+
+  Q:什么是loader？什么是plugin？
+  A:loader是用来告诉webpack如何处理某一类型的文件，并且引入到打包出来的文件中。
+  plugin是用来自定义webpack打包过程的方式，一个插件是含有apply方法的一个对象，通过这个方法可以参与到整个webpack打包的各个流程(生命周期)。
+
+配置
+  Q:如何自动生成webpack的配置？
+  A:webpack-cli，vue-cli
+
+开发
+  Q:webpack-dev-server和http服务器如Nginx有什么区别？
+  A:webpack-dev-server使用内存来存储webpack开发环境下的打包文件，并且可以使用模块热更新，比传统的http服务对开发更加简单高效。
+
+  Q:什么是模块热更新？
+  A:模块热更新是webpack的一个功能，可以使得代码修改过后不用刷新浏览器就可以更新，是高级版本的自动刷新浏览器。
+
+优化
+  Q:什么是长缓存？在webpack中如何做到长缓存优化？
+  A:浏览器在用户访问页面时，为了加快加载速度，会对用户访问的静态资源进行存储，但是每一次代码升级或是更新，都需要浏览器去下载新的代码。最简单和最方便的更新方式就是引入新的文件名称。在webpack中可以在output中给输出的文件指定chunkhash，并且分离经常更新的代码和框架代码。通过NamedModulesPlugin或HashedModuleIdsPlugin使再次打包文件名不变。
+
+  Q:什么是Tree-Shaking？CSS可以Tree-Shaking吗？
+  A:Tree-Shaking是指在打包中去除那些引入了但是在代码中没有被用到的那些无效代码。在webpack中Tree-Shaking是通过UglifyJSPlugin来Tree-Shaking javascript的。CSS需要使用Purify-CSS。
+
+## webpack工程化总结
+
+实时编译
+开发服务
+自动优化
+
+一切皆模块
+极速的调试响应速度
+优化应该自动完成
