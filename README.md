@@ -322,3 +322,13 @@ vue-cli
 
 create-react-app
 react-scripts
+
+## Angular和webpack
+
+Angular-cli
+  Angular最佳实践代码
+  所有项目依赖
+  Typescript和测试
+  环境设置
+
+npm install -g @angular/cli
